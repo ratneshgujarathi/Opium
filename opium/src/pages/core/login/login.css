@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.left-half, .right-half {
+    width: 50%;
+    height: 100vh;
+}
+
+.left-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Optional background color */
+}
+
+.right-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
