@@ -1,28 +1,115 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
+a:focus {
+    border: 2px solid #1d1c3b;
+    box-shadow: 0px 0px 10px 0px rgba(29, 28, 59, 0.3);
+    outline: none;
 }
 
-.container {
+.wrap {
+    align-items: stretch;
     display: flex;
-    height: 100%;
-}
-
-.left-half, .right-half {
-    width: 50%;
+    flex-flow: row wrap;
     height: 100vh;
+    position: relative;
 }
 
-.left-half {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0; /* Optional background color */
-}
-
-.right-half img {
+.wrap .left-column,
+.wrap .right-column {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+
+.wrap .left-column {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://d2hsgnfczgvd81.cloudfront.net/pexels-nickcollins-1292998%20(2).jpg") no-repeat center center;
+    background-size: cover;
+    background-clip: border-box;
+    border-radius: 0px 16px 16px 0px;
+    mix-blend-mode: darken;
+}
+
+.wrap .left-column .hero {
+    position: relative;
+    max-width: 600px;
+    padding: 32px;
+    width: 100%;
+}
+
+.wrap .left-column .hero h1 {
+    color: #fff;
+}
+
+.wrap .left-column .hero h1 .dot {
+    color: #0cbc8e;
+}
+
+.wrap .left-column .hero p {
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.wrap .left-column .hero p.kicker {
+    color: #0cbc8e;
+    font-weight: 700;
+}
+
+.wrap .right-column .form {
+    padding: 32px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 32px;
+    z-index: 1;
+}
+
+
+.wrap .right-column .form .forgotten {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.wrap .right-column .form .forgotten:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.wrap .right-column .form .forgotten a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333333;
+}
+
+.wrap .right-column .form .forgotten .forgot-link {
+    float: right;
+    margin: 0;
+}
+
+.wrap .right-column .form .remember {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+
+    .wrap .right-column,
+    .wrap .left-column {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 50%;
+    }
+}
+
+@media (max-height: 650px) {
+    .wrap .right-column .form .copyright {
+        width: 100%;
+        position: static;
+        padding: 1rem 2rem;
+        left: 50%;
+    }
 }

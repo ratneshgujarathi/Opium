@@ -1,0 +1,43 @@
+.textBox label {
+    display: block;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: none;
+}
+
+.textBox input {
+    border: 2px solid #cececeb6;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 0.4rem;
+    transition: all 0.2s ease-out;
+    background-position: 1.25rem center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.textBox input:focus {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #3f3e4b;
+    outline: none !important;
+}
+
+.textBox input::-webkit-input-placeholder {
+    font-family: "Inter", sans-serif;
+}
+
+.textBox input::-moz-placeholder {
+    font-family: "Inter", sans-serif;
+}
+
+.textBox input:-ms-input-placeholder{
+    font-family: "Inter", sans-serif;
+}
+
+.textBox input:-moz-placeholder {
+    font-family: "Inter", sans-serif;
+}
