@@ -7,14 +7,14 @@ function TextBox({ name, label, placeholder, id, value, type, setValue }) {
     }
     return (
         <div className='textBox'>
-            <label for={name}>{label}</label>
+            <label htmlFor={name}>{label}</label>
             <input
                 className="rounded"
                 id={id} name={name}
                 placeholder={placeholder}
                 type={type}
                 value={value}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) => textHandler(e)}
             />
         </div>

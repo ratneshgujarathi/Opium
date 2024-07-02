@@ -1,4 +1,3 @@
-import './App.css';
 import WebRouter from './routes/WebRouter';
 
 function App() {

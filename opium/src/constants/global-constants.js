@@ -1,0 +1,1 @@
+export const apiPath = process.REACT_APP_API_URL

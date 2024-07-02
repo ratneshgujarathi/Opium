@@ -6,7 +6,8 @@
     display: none;
 }
 
-.textBox input {
+.textBox input[type=text],
+.textBox input[type=password] {
     border: 2px solid #cececeb6;
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -21,23 +22,28 @@
     line-height: 1.5;
 }
 
-.textBox input:focus {
+.textBox input[type=text]:focus,
+.textBox input[type=password]:focus {
     box-shadow: 0 0 0 3px #fff, 0 0 0 5px #3f3e4b;
     outline: none !important;
 }
 
-.textBox input::-webkit-input-placeholder {
+.textBox input[type=text]::-webkit-input-placeholder,
+.textBox input[type=password]::-webkit-input-placeholder {
     font-family: "Inter", sans-serif;
 }
 
-.textBox input::-moz-placeholder {
+.textBox input[type=text]::-moz-placeholder,
+.textBox input[type=password]::-moz-placeholder {
     font-family: "Inter", sans-serif;
 }
 
-.textBox input:-ms-input-placeholder{
+.textBox input[type=text]:-ms-input-placeholder,
+.textBox input[type=password]:-ms-input-placeholder {
     font-family: "Inter", sans-serif;
 }
 
-.textBox input:-moz-placeholder {
+.textBox input[type=text]:-moz-placeholder,
+.textBox input[type=password]:-moz-placeholder {
     font-family: "Inter", sans-serif;
 }
