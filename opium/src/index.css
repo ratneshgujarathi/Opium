@@ -57,3 +57,10 @@ p {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.dflex {
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}

@@ -13,6 +13,11 @@ function Login() {
     error: false,
     text: ""
   });
+  const submitHandler = () => {
+
+  }
+
+
   return (
     <div className="wrap">
       <div className="left-column">
@@ -35,7 +40,7 @@ function Login() {
             <Switch id={"remember"} labelName={"Remember Me"} setValue={setRemeberMe} checked={rememberMe} />
             <p className="forgot-link"><a href="#">Forgot password?</a></p>
           </div>
-          <Button className="btn btn-secondary" buttonText={"Register"} onClick={() => { alert("hello 2") }} />
+          <Button className="btn btn-secondary" buttonText={"Register"} onClick={submitHandler} />
         </div>
 
       </div>

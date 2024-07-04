@@ -1,1 +1,1 @@
-export const apiPath = process.REACT_APP_API_URL
+export const apiPath = process.env.REACT_APP_API_URL
