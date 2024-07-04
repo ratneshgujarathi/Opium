@@ -3,7 +3,7 @@ import "./register.css";
 import TextBox from '../../../components/textbox/TextBox';
 import Button from '../../../components/buttons/Button';
 import { validate } from '../../../utils/validations';
-import { registerApi } from './utils';
+import { registerApi } from '../utils';
 import Toast from '../../../components/Toast/Toast';
 
 

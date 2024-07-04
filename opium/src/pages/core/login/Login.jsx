@@ -4,17 +4,32 @@ import TextBox from '../../../components/textbox/TextBox';
 import Button from '../../../components/buttons/Button';
 import CheckBox from '../../../components/checkers/checkbox/CheckBox';
 import Switch from '../../../components/checkers/switches/Switch';
+import Toast from '../../../components/Toast/Toast';
+import { loginApi } from '../utils';
 
 function Login() {
   const [userNameVal, setUserNameVal] = useState("");
   const [passwordVal, setPasswordVal] = useState("");
   const [rememberMe, setRemeberMe] = useState(false);
-  const [errorObj, setErrorObj] = useState({
-    error: false,
-    text: ""
-  });
-  const submitHandler = () => {
+  const [loader, setLoader] = useState(false);
+  const [toastAlert, setToastAlert] = useState({ show: false, message: "" })
 
+  const submitHandler = async () => {
+    if (userNameVal && passwordVal) {
+      setLoader(true);
+      try {
+        let res = await loginApi({ username: userNameVal, password: passwordVal });
+        localStorage.setItem("lKey", res.data.token);
+        localStorage.setItem("rKey", res.data.refreshToken);
+        setToastAlert({ show: true, message: res.msg })
+      } catch (err) {
+        setToastAlert({ show: true, message: err.msg })
+      } finally {
+        setLoader(false)
+      }
+    } else {
+      setToastAlert({ show: true, message: "Fields can not be empty." })
+    }
   }
 
 
@@ -33,17 +48,18 @@ function Login() {
           <div>
             <TextBox name={"username"} label={"Username"} placeholder={"Username"} id={"username"} type={"text"} value={userNameVal} setValue={setUserNameVal} />
             <TextBox name={"password"} label={"Password"} placeholder={"Password"} id={"password"} type={"password"} value={passwordVal} setValue={setPasswordVal} />
-            {errorObj.error && <div className='error errorText'>{errorObj.text}</div>}
-            <Button className={"btn btn-primary"} buttonText={"Sign In"} onClick={() => { alert("Hello") }} />
+
+            <Button className={"btn btn-primary"} buttonText={"Sign In"} onClick={submitHandler} />
           </div>
           <div className="forgotten">
             <Switch id={"remember"} labelName={"Remember Me"} setValue={setRemeberMe} checked={rememberMe} />
             <p className="forgot-link"><a href="#">Forgot password?</a></p>
           </div>
-          <Button className="btn btn-secondary" buttonText={"Register"} onClick={submitHandler} />
+          <Button className="btn btn-secondary" buttonText={"Register"} onClick={submitHandler} loader={loader} />
         </div>
 
       </div>
+      {toastAlert.show && <Toast setToast={() => { setToastAlert({ show: false, message: "" }) }} message={toastAlert.message} />}
     </div>
   )
 }
